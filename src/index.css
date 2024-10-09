@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #0a0a0a;
+  --color-text: #e0e0e0;
+  --color-accent: #d4af37;
+  --color-secondary: #4a4a4a;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.btn {
+  @apply px-6 py-2 rounded-full transition duration-300 ease-in-out;
+}
+
+.btn-primary {
+  @apply bg-accent text-background hover:bg-opacity-80;
+}
+
+.section-title {
+  @apply text-4xl font-bold mb-12 text-center;
+  color: var(--color-accent);
+}
+
+.parallax-content {
+  @apply flex flex-col justify-center items-center h-full;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.animated-bg {
+  @apply fixed top-0 left-0 w-full h-full z-0;
+}
+
+.content {
+  @apply relative z-10;
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+/* Customizing slick carousel */
+.slick-slider {
+  @apply w-full mx-auto;
+}
+
+.slick-slide img {
+  @apply w-full h-auto;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: var(--color-accent) !important;
+}
+
+/* Ensure the canvas takes up the full viewport */
+.animated-bg canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+}
